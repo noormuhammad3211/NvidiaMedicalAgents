@@ -1,0 +1,8 @@
+streamlit==1.32.0
+python-docx==1.1.0
+PyPDF2==3.0.1
+llama-index==0.10.11
+pickle-mixin==1.0.2
+asyncio>=3.4.3
+logging>=0.5.1.2
+nvidia-ai-foundation>=0.1.0
