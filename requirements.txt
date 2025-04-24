@@ -4,6 +4,6 @@ PyPDF2==3.0.1
 llama-index
 pickle-mixin==1.0.2
 asyncio>=3.4.3
-logging>=0.5.1.2
+logging
 nvidia-ai-foundation>=0.1.0
 llama-index-llms-nvidia
