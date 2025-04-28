@@ -40,7 +40,7 @@ if "NVIDIA_API_KEY" not in os.environ:
 # Initialize LLM
 @st.cache_resource
 def get_llm():
-    return NVIDIA(model="nvidia/llama-3.1-nemotron-ultra-253b-v1")
+    return NVIDIA(model="meta/llama-3.2-90b-vision-instruct")
 
 # Function to extract text from uploaded file
 def extract_text_from_file(uploaded_file):
