@@ -35,12 +35,12 @@ logger.addHandler(session_handler)
 
 # Set environment variables
 if "NVIDIA_API_KEY" not in os.environ:
-    os.environ["NVIDIA_API_KEY"] = "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"
+    os.environ["NVIDIA_API_KEY"] = "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"
 
 # Initialize LLM
 @st.cache_resource
 def get_llm():
-    return NVIDIA(model="meta/llama-3.3-70b-instruct")
+    return NVIDIA(model="mistralai/mixtral-8x7b-instruct-v0.1")
 
 # Function to extract text from uploaded file
 def extract_text_from_file(uploaded_file):
