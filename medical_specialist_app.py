@@ -40,7 +40,7 @@ if "NVIDIA_API_KEY" not in os.environ:
 # Initialize LLM
 @st.cache_resource
 def get_llm():
-    return NVIDIA(model="deepseek-ai/deepseek-r1-distill-llama-8b")
+    return NVIDIA(model="meta/llama-3.1-70b-instruct")
 
 # Function to extract text from uploaded file
 def extract_text_from_file(uploaded_file):
@@ -548,13 +548,14 @@ if prompt := st.chat_input("What symptoms are you experiencing?"):
                 # Run async processing
                 async def process_query_async():
                     # Step 1: Classify the query if not already classified
-                    if not st.session_state.classification:
-                        classification = await classify_query(prompt)
-                        st.session_state.classification = classification
-                    else:
+                    #if not st.session_state.classification:
+                      #  classification = await classify_query(prompt)
+                     #   st.session_state.classification = classification
+                    #else:
                         # Use existing classification
-                        classification = st.session_state.classification
-                    
+                        #classification = st.session_state.classification
+                    classification = await classify_query(prompt)
+                    st.session_state.classification = classification
                     # Step 2: Process with appropriate specialist agent
                     response = await process_with_agent(
                         prompt, 
